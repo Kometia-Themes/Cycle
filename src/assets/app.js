@@ -369,7 +369,7 @@ function() {
       var totalItems = 0;
       $.post(ajaxConfig.postUrl,
              {'sku_id':productSku,'quantity':qty})
-      .success(function(data) {
+      .done(function(data) {
         AjaxCart = data.object || {};
         totalItems = AjaxCart.total_items;
         buildAjaxCart(AjaxCart, sku, AjaxCart.items, AjaxCart.total_price);
@@ -479,8 +479,8 @@ function() {
       getProductHeight();
       setBodyTopPadding();
       alignHeights();
-    })
-    .load(function() {
+    });
+    $(window).on("load", function (e) {
       alignHeights();
     });
 });
