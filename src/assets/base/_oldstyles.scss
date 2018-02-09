@@ -2301,6 +2301,10 @@ strong {color: $main_link_color;}
 }
 .product-card .product-card__description .product-card__title .product-card__title-link {
   text-decoration: none;
+  font-size: 12px;
+  @media(min-width: 768px) {
+    font-size: 14px;
+  }
 }
 .product-card .product-card__description .product-card__title .product-card__title-link:hover,
 .product-card .product-card__description .product-card__title .product-card__title-link:focus {
@@ -2723,7 +2727,13 @@ strong {color: $main_link_color;}
 .cart .content .table {}
 .cart .content .table .btn {background-color: transparent; color: $brand_main_color;}
 .cart .content .table .cart__resume-table__product-remove-column {padding-left: 0; padding-right: 0;}
-.cart .content .table > thead > tr > th { font-weight: bold; text-transform: uppercase; }
+.cart .content .table > thead > tr > th {
+  font-weight: bold; text-transform: uppercase;
+  font-size: .9em;
+  @media(min-width: 768px) {
+    font-size: 1.2em;
+  }
+}
 .cart .content .table > tbody > tr > td,
 .cart .content .table > tbody > tr > th,
 .cart .content .table > tfoot > tr > td,
@@ -2742,7 +2752,12 @@ strong {color: $main_link_color;}
 .cart .content .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child,
 .cart .content .table:last-child > tbody:last-child > tr:last-child,
 .cart .content .table:last-child > tfoot:last-child > tr:last-child { border-radius: 0; border:none; }
-.cart .content .cart__resume-table__product-name {text-transform: uppercase; color: black; font-size: 1.2em; font-weight: bold;}
+.cart .content .cart__resume-table__product-name {
+  text-transform: uppercase; color: black; font-size: .8em; font-weight: bold;
+  @media(min-width: 768px) {
+    font-size: 1.2em;
+  }
+}
 .cart .content .cart__resume-table__product-name:hover,
 .cart .content .cart__resume-table__product-name:focus {color: $brand_main_color; text-decoration: none;}
 .cart .content .cart__resume-table__product-excert {font-size: 16px; color: #909090;}

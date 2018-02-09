@@ -1,3 +1,10 @@
+{% if settings.accept_visa is not empty or
+settings.accept_mastercard is not empty or
+settings.accept_amex is not empty or
+settings.accept_paypal is not empty or
+settings.accept_oxxo is not empty or
+settings.accept_spei is not empty or
+settings.accept_cash is not empty %}
 <div class="payment_methods">
   <p class="paymente_methods__title">Métodos de pago</p>
     <ul class="payment_methods__list">
@@ -24,3 +31,4 @@
     {% endif %}
     </ul>
 </div>
+{% endif %}

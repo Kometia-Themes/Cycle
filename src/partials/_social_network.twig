@@ -1,3 +1,12 @@
+{% if settings.facebook_link is not empty or
+ settings.twitter_link is not empty or
+ settings.google_link is not empty or
+ settings.instagram_link is not empty or
+ settings.pinterest_link is not empty or
+ settings.youtube_link is not empty or
+ settings.vimeo_link is not empty or
+ settings.tumblr_link is not empty or
+ settings.whatsapp_link is not empty %}
 <div class="social__network">
   <p class="social__title">Nuestras redes</p>
   <div class="social-sharing">
@@ -39,3 +48,4 @@
     {% endif %}
   </div>
 </div>
+{% endif %}

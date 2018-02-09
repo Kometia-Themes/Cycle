@@ -1,7 +1,6 @@
 {% extends 'layout.twig' %}
 
 {% block body %}
-<div class="container-fluid collection-page">
   {% if collection.image_url is not null %}
     {% set image_url = collection.image_url %}
     {% set style = '' %}
@@ -20,15 +19,25 @@
     {% set width = '380' %}
     {% set height = '380' %}
   {% endif %}
-
+<div class="container-fluid collection-page">
   <div class="row">
     <div class="col-xs-12 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3 header">
       {% include '_titles.twig' with {title: collection.title, uppercase: settings.heading_uppercase_titles} only %}
       <p class="lead">{{ collection.description | striptags }}</p>
       <hr class="spacer">
+      {% include '_filterbar.twig' %}
     </div>
   </div>
-  {% if products.count == 0 %}
+{% if products.count > 0 %}
+  <div class="row products__row symmetrical-container">
+    {% for product in products %}
+    <div class="col-xs-6 col-sm-6 col-md-4 col-lg-3 symmetrical">
+      {% include '_product-card.twig' with {'width': width, 'height': height} %}
+    </div>
+  {% endfor %}
+  </div> <!-- .products__row -->
+{% include '_pagination.twig' %}
+{% else %}
   <div class="row">
     <div class="col-xs-12">
       <div class="row">
@@ -40,15 +49,6 @@
       </div>
     </div>
   </div> <!-- .collection-page -->
-  {% else %}
-  <div class="row products__row symmetrical-container">
-    {% for product in products %}
-    <div class="col-xs-6 col-sm-6 col-md-4 col-lg-3 symmetrical">
-      {% include '_product-card.twig' with {'width': width, 'height': height} %}
-    </div>
-  {% endfor %}
-  </div> <!-- .products__row -->
-  {% include '_pagination.twig' %}
 {% endif %}
 </div> <!-- .container-fluid -->
 {% endblock %}
