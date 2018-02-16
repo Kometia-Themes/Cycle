@@ -1,14 +1,14 @@
 {% extends 'layout.twig' %}
 
 {% block body %}
-<div class="container-fluid simple-page">
+<div class="container-fluid simple-page post-page super_padding">
   <div class="row products_row">
-    <div class="col-xs-12">
+    <div class="col-xs-12 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2 text-center">
       {% include '_titles.twig' with {title: page.title, uppercase: settings.heading_uppercase_titles} only %}
     </div>
   </div>
   <div class="row content">
-  <div class="col-xs-12">
+  <div class="col-xs-12 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
     {{ page.content }}
   </div>
   </div> <!-- .content -->
