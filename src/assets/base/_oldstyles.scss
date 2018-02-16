@@ -79,20 +79,20 @@ a:focus {
 }
 
 .bootstrap-select>.dropdown-toggle.bs-placeholder {
-  color: $btn_text_color;
-  background-color: $btn_bg_color;
+  color: #333;
+  background-color: #f4f4f4;
 }
 
 .bootstrap-select>.dropdown-toggle.bs-placeholder:active,
 .bootstrap-select>.dropdown-toggle.bs-placeholder:hover {
-  color: $btn_text_color;
-  background-color: $btn_bg_color_hover;
+  color: #333;
+  background-color: #f4f4f4;
 }
 
 .bootstrap-select>.dropdown-toggle.bs-placeholder:focus {
   color: #333;
-  background-color: #e6e6e6;
-  border-color: #adadad;
+  background-color: #f4f4f4;
+  border-color: #e6e6e6;
 }
 
 .btn-xs {
@@ -4362,11 +4362,17 @@ strong {
   color: $headings_color !important;
   padding-top: 2em;
 }
+
 .post-page .title.page-title .alternative {
-    color: $headings_color !important;
+  color: $headings_color !important;
 }
+
 @media(max-width:767px) {
   .post-page .title.page-title {
     padding-top: 1em;
   }
+}
+
+.collections.slick-dotted.slick-slider {
+  padding-bottom: 20px;
 }
