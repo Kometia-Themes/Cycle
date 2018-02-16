@@ -1,15 +1,19 @@
 {% extends 'layout.twig' %}
 
 {% block body %}
-<div class="container-fluid blog-section">
-  <div class="row">
-    <div class="col-xs-12 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3 header">
+<div class="container-fluid blog-section super_padding">
+  <div class="row products_row hidden-xs hidden-sm">
+    <div class="col-xs-12">
+      {% include '_breadcrumb.twig' with {level: 'Blogs', sublevel: '', blog_permalink: blog.permalink, blog_title: blog.title, post_permalink: '' } %}
+    </div>
+  </div>
+  <div class="row products_row">
+    <div class="col-xs-12">
       {% include '_titles.twig' with {title: blog.title, uppercase: settings.heading_uppercase_titles} only %}
-      <hr class="spacer">
     </div>
   </div>
   <div class="row content">
-    <div class="col-xs-12 col-md-10 col-md-offset-1">
+    <div class="col-xs-12">
       {% for posts_row in posts | batch(2) %}
         <div class="row">
         {% for post in posts_row %}

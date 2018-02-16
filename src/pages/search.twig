@@ -7,13 +7,11 @@
     <div class="col-xs-12 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3 header">
       {% include '_titles.twig' with {title: 'Término: '~search, uppercase: settings.heading_uppercase_titles} only %}
       <p class="search-text">Productos encontrados</p>
-      <hr class="spacer">
     </div>
     {% else %}
     <div class="col-xs-12 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3 header">
       {% include '_titles.twig' with {title: 'Sin resultados', uppercase: settings.heading_uppercase_titles} only %}
       <p class="search-text">Intenta otro término de búsqueda</p>
-      <hr class="spacer">
     </div>
     <div class="col-xs-12 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
       <form method="get">
@@ -80,7 +78,7 @@ $(function () {
       window.location = $(this).data('href');
     });
   });
-</script>  
+</script>
 {% endblock %}
 
 

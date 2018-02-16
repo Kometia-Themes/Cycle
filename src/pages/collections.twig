@@ -1,22 +1,24 @@
 {% extends 'layout.twig' %}
 
 {% block body %}
-<div class="container-fluid collections-page">
-
-{% if collections | length > 0 %}
-  <div class="row">
-    <div class="col-xs-12 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3 header">
-      {% include '_titles.twig' with {title: 'Colecciones', uppercase: settings.heading_uppercase_titles} only %}
-      <p class="lead">{{ collection.description | striptags }}</p>
-      <hr class="spacer">
+<div class="container-fluid products-page collections-page super_padding">
+  <div class="row products_row hidden-xs hidden-sm">
+    <div class="col-xs-12">
+      {% include '_breadcrumb.twig' with {level: 'Colecciones', sublevel: '' } %}
     </div>
   </div>
+  <div class="row products_row">
+    <div class="col-xs-12">
+      {% include '_titles.twig' with {title: 'Colecciones', uppercase: settings.heading_uppercase_titles} only %}
+    </div>
+  </div>
+{% if collections | length > 0 %}
   <div class="row content">
-    <div class="col-xs-12 col-md-10 col-md-offset-1">
+    <div class="col-xs-12">
     {% for collection_row in collections | batch(2) %}
       <div class="row">
         {% for collection in collection_row %}
-        <div class="col-xs-12 col-md-6 collection">
+        <div class="col-xs-12 col-sm-6 collection">
           {% if collection.image_url is not null %}
           <div class="collection__item thumbnail_landscape" style="background-image: url('{{ collection.image_url }}&w=460&h=460&fit=crop');">
             <div class="outer">
@@ -44,16 +46,6 @@
   {% include '_pagination.twig' %}
   </div> <!-- .main-collections -->
   {% else %}
-  <div class="row">
-    <div class="col-xs-12 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3 header">
-      {% if settings.heading_uppercase_titles %}
-      <h1 class="title page-title">{{ 'Colecciones' | upper }}</h1>
-      {% else %}
-      <h1 class="title page-title">Colecciones</h1>
-      {% endif %}
-      <hr class="spacer">
-    </div>
-  </div>
   <div class="row">
     <div class="col-xs-12">
       <div class="row">

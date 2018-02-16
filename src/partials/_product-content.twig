@@ -13,6 +13,11 @@
 {% endif %}
 {% set maxqty = settings.max_cart_items %}
 <div class="container-fluid product-page">
+  <div class="row products_row hidden-xs hidden-sm">
+    <div class="col-xs-12">
+      {% include '_breadcrumb.twig' with {level: 'Productos', sublevel: product.name } %}
+    </div>
+  </div>
   <div class="row product">
     <div class="col-sm-12 col-md-7">
       <div class="row">
@@ -61,17 +66,11 @@
     <div class="col-sm-12 col-md-5 product-options">
       <div class="row">
         <div class="col-xs-12">
-          <ol class="breadcrumb hidden-xs hidden-sm">
-            <li><a href="/">Inicio</a></li>
-            <li><a href="/productos">Productos</a></li>
-            <li class="active">{{ product.name }}</li>
-          </ol>
           {% if settings.heading_uppercase_titles %}
           <h1 class="title page-title product-single__name">{{ product.name | upper }}</h1>
           {% else %}
           <h1 class="title page-title product-single__name">{{ product.name }}</h1>
           {% endif %}
-          <hr class="spacer visible-xs visible-sm">
           {% if product.vendor.name is not null %}
            <p class="vendor">Marca: <strong>{{ product.vendor.name | title }}</strong></p>
           {% endif %}
@@ -166,7 +165,6 @@
         {% else %}
         <h3 class="title">Productos relacionados</h3>
         {% endif %}
-        <hr class="spacer">
       </div>
     </div>
     <div class="row">

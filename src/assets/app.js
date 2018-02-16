@@ -40,46 +40,25 @@ function() {
     {% endif %}
   {% endif %}
 
-{% if settings.active_brand_slider_nav %}
   $('.slider').slick({
     slidesToShow: 1,
     slidesToScroll: 1,
-    arrows: true,
-    speed: 2000,
-    autoplay: true,
-    autoplaySpeed: 3000,
-    fade: true,
-    asNavFor: '.slider-nav'
-  });
-
-  $('.slider-nav').slick({
-    slidesToShow: 4,
-    slidesToScroll: 1,
-    asNavFor: '.slider',
-    dots: false,
-    centerMode: false,
-    focusOnSelect: true
-  });
-{% else %}
-  $('.slider').slick({
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    arrows: true,
+    arrows: false,
+    dots: true,
     speed: 2000,
     autoplay: true,
     autoplaySpeed: 3000,
     fade: true
   });
-{% endif %}
 
   $('.products').slick({
-    dots: false,
+    dots: true,
     infinite: true,
     speed: 800,
-    autoplay: false,
+    autoplay: true,
     autoplaySpeed: 3000,
     rtl: false,
-    arrows: true,
+    arrows: false,
     slidesToShow: 4,
     slidesToScroll: 1,
     responsive: [
@@ -87,36 +66,28 @@ function() {
         breakpoint: 1680,
         settings: {
           slidesToShow: 4,
-          slidesToScroll: 1,
-          infinite: true,
-          dots: false
+          slidesToScroll: 1
         }
       },
       {
         breakpoint: 1480,
         settings: {
           slidesToShow: 3,
-          slidesToScroll: 1,
-          infinite: true,
-          dots: false
+          slidesToScroll: 1
         }
       },
       {
         breakpoint: 1366,
         settings: {
           slidesToShow: 3,
-          slidesToScroll: 1,
-          infinite: true,
-          dots: false
+          slidesToScroll: 1
         }
       },
       {
         breakpoint: 1200,
         settings: {
           slidesToShow: 2,
-          slidesToScroll: 1,
-          infinite: true,
-          dots: false
+          slidesToScroll: 1
         }
       },
       {
@@ -143,13 +114,13 @@ function() {
     ]
   });
   $('.collections').slick({
-    dots: false,
+    dots: true,
     infinite: true,
     speed: 800,
     autoplay: true,
     autoplaySpeed: 2000,
     rtl: false,
-    arrows: true,
+    arrows: false,
     slidesToShow: 3,
     slidesToScroll: 1,
     responsive: [
@@ -157,36 +128,28 @@ function() {
         breakpoint: 1680,
         settings: {
           slidesToShow: 3,
-          slidesToScroll: 1,
-          infinite: true,
-          dots: false
+          slidesToScroll: 1
         }
       },
       {
         breakpoint: 1480,
         settings: {
           slidesToShow: 2,
-          slidesToScroll: 1,
-          infinite: true,
-          dots: false
+          slidesToScroll: 1
         }
       },
       {
         breakpoint: 1366,
         settings: {
           slidesToShow: 2,
-          slidesToScroll: 1,
-          infinite: true,
-          dots: false
+          slidesToScroll: 1
         }
       },
       {
         breakpoint: 1200,
         settings: {
           slidesToShow: 2,
-          slidesToScroll: 1,
-          infinite: true,
-          dots: false
+          slidesToScroll: 1
         }
       },
       {

@@ -1,13 +1,24 @@
-<div class="nav-breadcrumb">
-  <div class="container margin-bottom">
-    <ul class="breadcrumb">
-      <li class="breadcrumb__link breadcrub--inactive"><a href="/">Inicio</a></li>
-      {% if sublevel is empty %}
-      <li class="breadcrumb__link breadcrub--active">{{ level }}</li>
-      {% else %}
-      <li class="breadcrumb__link breadcrub--inactive"><a href="/productos">{{ level }}</a></li>
-      <li class="breadcrumb__link breadcrub--active">{{ sublevel }}</li>
-      {% endif %}
-    </ul>
-  </div>
-</div>
+<ul class="breadcrumb">
+  <li class="breadcrumb__link breadcrub--inactive"><a href="/">Inicio</a></li>
+  {% if level |lower == 'productos' and sublevel is empty %}
+  <li class="breadcrumb__link breadcrub--active"><a href="/productos">{{ level }}</a></li>
+  {% elseif level |lower == 'colecciones' and sublevel is empty %}
+  <li class="breadcrumb__link breadcrub--active"><a href="/colecciones">{{ level }}</a></li>
+  {% elseif level |lower == 'colecciones' and sublevel is not empty %}
+  <li class="breadcrumb__link breadcrub--inactive"><a href="/colecciones">{{ level }}</a></li>
+  <li class="breadcrumb__link breadcrub--active">{{ sublevel }}</li>
+  {% elseif level |lower == 'productos' and sublevel is not empty %}
+  <li class="breadcrumb__link breadcrub--inactive"><a href="/productos">{{ level }}</a></li>
+  <li class="breadcrumb__link breadcrub--active">{{ sublevel }}</li>
+  {% elseif level |lower == 'categorías' and sublevel is not empty %}
+  <li class="breadcrumb__link breadcrub--inactive">{{ level }}</li>
+  <li class="breadcrumb__link breadcrub--active"><a href="/categorias/{{ sublevel }}">{{ sublevel }}</a></li>
+  {% elseif level |lower == 'blogs' and post_permalink is empty%}
+  <li class="breadcrumb__link breadcrub--inactive">{{ level }}</li>
+  <li class="breadcrumb__link breadcrub--active"><a href="/blogs/{{ blog_permalink }}">{{ blog_title }}</a></li>
+  {% elseif level |lower == 'blogs' and post_permalink is not empty %}
+  <li class="breadcrumb__link breadcrub--inactive">{{ level }}</li>
+  <li class="breadcrumb__link breadcrub--active"><a href="/blogs/{{ blog_permalink }}">{{ blog_title }}</a></li>
+  <li class="breadcrumb__link breadcrub--active"><a href="/blogs/{{ blog_permalink }}/posts/{{ post_permalink }}">{{ post_title }}</a></li>
+  {% endif %}
+</ul>

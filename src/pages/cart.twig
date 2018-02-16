@@ -2,12 +2,11 @@
 
 {% block body %}
 {% set maxqty = settings.max_cart_items %}
-<div class="container-fluid cart">
+<div class="container-fluid super_padding cart">
   <div class="row">
     <div class="col-xs-12 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3 header">
       {% include '_titles.twig' with {title: settings.cart_title, uppercase: settings.heading_uppercase_titles} only %}
       <p class="lead">{{ settings.cart_description }}</p>
-      <hr class="spacer">
     </div>
   </div>
   {% if not cart or cart.items|length == 0 %}

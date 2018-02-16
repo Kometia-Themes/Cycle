@@ -11,33 +11,37 @@
     {% set width = '380' %}
     {% set height = '380' %}
   {% endif %}
-<div class="container-fluid category-page">
-  <div class="row">
-    <div class="col-xs-12 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3 header">
-      {% include '_titles.twig' with {title: category.title, uppercase: settings.heading_uppercase_titles} only %}
-      <hr class="spacer">
-      {% include '_filterbar.twig' %}
+<div class="container-fluid products-page">
+  <div class="row products_row hidden-xs hidden-sm">
+    <div class="col-xs-12">
+      {% include '_breadcrumb.twig' with {level: 'Categorías', sublevel: category.permalink } %}
     </div>
   </div>
-  {% if products.count > 0 %}
+  <div class="row products_row">
+    <div class="col-xs-12 col-sm-6 col-md-8">
+    {% include '_titles.twig' with {title: category.title, uppercase: settings.heading_uppercase_titles} only %}
+    </div>
+    {% include '_filterbar.twig' %}
+  </div>
   <div class="row products_row symmetrical-container">
+  {% if products.count > 0 %}
     {% for product in products %}
     <div class="col-xs-6 col-sm-6 col-md-4 col-lg-3 symmetrical">
       {% include '_product-card.twig' with {'width': width, 'height': height} %}
     </div>
     {% endfor %}
-  </div>
-{% include '_pagination.twig' %}
-{% else %}
-  <div class="row">
+  {% include '_pagination.twig' %}
+  {% else %}
     <div class="col-xs-12">
       <div class="row">
-        <div class="col-xs-12 placeholder">
-          <p class="products-text">Todavía no existen productos en esta categoría, una vez que empieces a crearlos aparecerán aquí.</p>
+        <div class="col-xs-12 text-center">
+          <h2 class="products-title">¡Falta poco!</h2>
+          <p class="products-text">Todavía no existen Productos, una vez que empieces a crearlos aparecerán aquí.</p>
+          <p><a class="btn btn-primary" href="/admin/products">Gestionar Productos</a> <a class="btn btn-primary" href="/admin/collections">Gestionar Colecciones</a></p>
         </div>
       </div>
     </div>
+  {% endif %}
   </div> <!-- .page-products -->
-{% endif %}
 </div> <!-- .container-fluid -->
 {% endblock %}

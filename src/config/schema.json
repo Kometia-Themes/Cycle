@@ -35,16 +35,8 @@
             {
               "type": "color",
               "id": "sidebar_menu_bg_gradient_color_one",
-              "label": "Degradado inicial",
-              "default": "#ff7e11",
-              "info": "Si quieres un color sólido usa el mismo color del degradado final."
-            },
-            {
-              "type": "color",
-              "id": "sidebar_menu_bg_gradient_color_two",
-              "label": "Degradado final",
-              "default": "#ee1919",
-              "info": "Si quieres un color sólido usa el mismo color del degradado inicial."
+              "label": "Fondo",
+              "default": "#000000"
             },
             {
               "type": "color",
@@ -955,8 +947,7 @@
             {
               "type": "checkbox",
               "id": "heading_uppercase_titles",
-              "label": "Títulos en mayúsculas",
-              "default": true
+              "label": "Títulos en mayúsculas"
             }
           ]
         },
@@ -1883,28 +1874,6 @@
               "label": "Descripción"
             },
             {
-              "type": "paragraph",
-              "content": "Marca - Logo"
-            },
-            {
-              "type": "text",
-              "id": "slide_1_nav_brand_text",
-              "label": "Nombre de la marca",
-              "info": "Se usa si no hay logotipo seleccionado."
-            },
-            {
-              "type": "checkbox",
-              "id": "slide_1_nav_show_brand_img",
-              "default": false,
-              "label": "Mostrar logotipo de marca"
-            },
-            {
-              "type": "image",
-              "id": "slide_1_nav_brand_img",
-              "label": "Logotipo slide 1",
-              "info": "120px de ancho recomendado"
-            },
-            {
               "type": "checkbox",
               "id": "slide_1_btn",
               "label": "Mostrar boton de acción"
@@ -1950,28 +1919,6 @@
               "type": "text",
               "id": "slide_2_description",
               "label": "Descripción"
-            },
-            {
-              "type": "paragraph",
-              "content": "Marca - Logo"
-            },
-            {
-              "type": "text",
-              "id": "slide_2_nav_brand_text",
-              "label": "Nombre de la marca",
-              "info": "Se usa si no hay logotipo seleccionado."
-            },
-            {
-              "type": "checkbox",
-              "id": "slide_2_nav_show_brand_img",
-              "default": false,
-              "label": "Mostrar logotipo de marca"
-            },
-            {
-              "type": "image",
-              "id": "slide_2_nav_brand_img",
-              "label": "Logotipo slide 1",
-              "info": "120px de ancho recomendado"
             },
             {
               "type": "checkbox",
@@ -2021,28 +1968,6 @@
               "label": "Descripción"
             },
             {
-              "type": "paragraph",
-              "content": "Marca - Logo"
-            },
-            {
-              "type": "text",
-              "id": "slide_3_nav_brand_text",
-              "label": "Nombre de la marca",
-              "info": "Se usa si no hay logotipo seleccionado."
-            },
-            {
-              "type": "checkbox",
-              "id": "slide_3_nav_show_brand_img",
-              "default": false,
-              "label": "Mostrar logotipo de marca"
-            },
-            {
-              "type": "image",
-              "id": "slide_3_nav_brand_img",
-              "label": "Logotipo slide 3",
-              "info": "120px de ancho recomendado"
-            },
-            {
               "type": "checkbox",
               "id": "slide_3_btn",
               "label": "Mostrar boton de acción"
@@ -2090,28 +2015,6 @@
               "label": "Descripción"
             },
             {
-              "type": "paragraph",
-              "content": "Marca - Logo"
-            },
-            {
-              "type": "text",
-              "id": "slide_4_nav_brand_text",
-              "label": "Nombre de la marca",
-              "info": "Se usa si no hay logotipo seleccionado."
-            },
-            {
-              "type": "checkbox",
-              "id": "slide_4_nav_show_brand_img",
-              "default": false,
-              "label": "Mostrar logotipo de marca"
-            },
-            {
-              "type": "image",
-              "id": "slide_4_nav_brand_img",
-              "label": "Logotipo slide 1",
-              "info": "120px de ancho recomendado"
-            },
-            {
               "type": "checkbox",
               "id": "slide_4_btn",
               "label": "Mostrar boton de acción"
@@ -2131,11 +2034,6 @@
         {
           "header": "Extras",
           "settings": [
-            {
-              "type": "checkbox",
-              "id": "active_brand_slider_nav",
-              "label": "Mostrar barra de marcas del slider"
-            },
             {
               "type": "checkbox",
               "id": "slider_has_overlay",

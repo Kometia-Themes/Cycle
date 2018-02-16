@@ -38,7 +38,11 @@
   </div>
   <div class="product-card__description">
     {% if product.compared_price > product.price %}
-    <p class="product-card__discount">{{ settings.product_compared_text }} <span class="product-card--compared-price">{{ product.compared_price | money('symbol', 'code') }}</span></p>
+    <p class="product-card__discount">
+    <span style='color:red;text-decoration:line-through'>
+      <span style='color:black'>{{ product.compared_price | money('symbol', 'code') }}</span>
+    </span>
+    </p>
     {% endif %}
     <h2 class="product-card__title">
       <a href="/productos/{{ product.permalink }}{% if product.sku.permalink != 'default' %}/{{ product.sku.permalink }}{% endif %}" class="product-card__title-link">{{ product.name }}</a>

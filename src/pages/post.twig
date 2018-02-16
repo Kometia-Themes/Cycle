@@ -1,15 +1,14 @@
 {% extends 'layout.twig' %}
 
 {% block body %}
-<div class="container-fluid post-page">
-  <div class="row">
-    <div class="col-xs-12 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3 header">
+<div class="container-fluid post-page super_padding">
+  <div class="row products_row">
+    <div class="col-xs-12 text-center">
       {% include '_titles.twig' with {title: post.title, uppercase: settings.heading_uppercase_titles} only %}
-      <hr class="spacer">
     </div>
   </div>
   <div class="row content">
-    <div class="col-xs-12 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
+    <div class="col-xs-12 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2 text-center">
       <div class="post__info">
         {% if post.tags | length > 0 %}
         <ul class="list-inline">
