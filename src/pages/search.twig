@@ -6,12 +6,10 @@
   {% if results.products | length > 0 %}
     <div class="col-xs-12 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3 header">
       {% include '_titles.twig' with {title: 'Término: '~search, uppercase: settings.heading_uppercase_titles} only %}
-      <p class="search-text">Productos encontrados</p>
     </div>
     {% else %}
     <div class="col-xs-12 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3 header">
       {% include '_titles.twig' with {title: 'Sin resultados', uppercase: settings.heading_uppercase_titles} only %}
-      <p class="search-text">Intenta otro término de búsqueda</p>
     </div>
     <div class="col-xs-12 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
       <form method="get">

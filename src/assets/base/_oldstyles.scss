@@ -3499,7 +3499,9 @@ strong {
 .search-section .page-search .section-vertical .header .img-background {
   height: 100%;
 }
-
+.search-section .page-search .header .title {
+  padding: 2em 0;
+}
 .search-section .page-search .header .search__description {
   position: relative;
   height: 100%;
@@ -3529,6 +3531,7 @@ strong {
 
 .search-section .page-search .header .search__description .search-text {
   font-size: 1.2em;
+  text-align: left;
   padding-right: 2em;
   padding-left: 2em;
 }
